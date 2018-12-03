@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <title>UiPath Flights</title>
+      <link rel="stylesheet" href="css\bootstrap.min.css">
+      <link rel="stylesheet" href="css\style.css">
+
+   </head>
+   <body style="">
+
+      <div id="wrap">
+         <header id="header" class="header header-stick" style="background-color: rgb(255, 255, 255);">
+            <div class="container">
+               <div class="logo float-left" style="opacity: 1; visibility: visible;"><a href="index.html" title=""><img src="logo.svg" alt=""></a></div>
+               <div class="bars" id="bars" style="display: none;"></div>
+               <nav class="nav-c nav-i" id="navigation" data-menu-type="1200">
+                  <div class="nav-inner">
+                     <div class="tb">
+                        <div class="tb-cell">
+                           <ul class="menu-list text-uppercase">
+                              <li class="current-menu-parent">
+                                 <a href="index.html" title="">Flights</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </header>
+
+         <div class="main">
+            <div class="container">
+               <div class="main-cn flight-page bg-white clearfix">
+                  <div class="row">
+                     <div class="col-md-12">
+
+                        <section class="list-f">
+                           <div class="calendar-charts">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="ret-dep">
+                                       <p>Departure: <span>May 24,2018</span></p>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="ret-dep pull-right">
+                                       <p>Return: <span>May 24,2018</span></p>
+
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <div class="f-statistics">
+                              <div class="row">
+                                 <div class="col-sm-12 text-center f-statistics-item">
+                                    <h5>Your Selection</h5>
+                                  <p><ins id="priceSel"></ins><span id="agencySel"></span></p>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <div class="list-f-head">
+                              <span class="icon"><img src="icon-outbound.png" alt=""></span>
+                              <h3>Bucharest - London</h3>
+                              <p><span>100</span> results</p>
+                           </div>
+                           <div class="list-f-cn">
+                              <div class="responsive-table scroll-table" style="overflow: hidden; outline: none;" tabindex="5000">
+                                 <table class="table tableF table-radio" id="myTable">
+                                    <thead>
+                                      <tr>
+                                        <th>Agency</th>
+                                        <th onclick="sortTable(1);">Departure <span class="caret"></span></th>
+                                        <th onclick="sortTable(2);">Arrival <span class="caret"></span> </th>
+                                        <th onclick="sortTable(3);" class="text-center">Duration  <span class="caret"></span></th>
+                                        <th class="text-center" onclick="sortTable(4);">Price <span class="caret"></span></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-1" class="radio"><label for="radio-air-1"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15 | 1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>245</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-2" class="radio"><label for="radio-air-2"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>245</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-3" class="radio"><label for="radio-air-3"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>254</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-4" class="radio"><label for="radio-air-4"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>237</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-5" class="radio"><label for="radio-air-5"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>238</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-6" class="radio"><label for="radio-air-6"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>223</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-7" class="radio"><label for="radio-air-7"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>232</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-8" class="radio"><label for="radio-air-8"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>233</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-9" class="radio"><label for="radio-air-9"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>252</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-10" class="radio"><label for="radio-air-10"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>243</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-11" class="radio"><label for="radio-air-11"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>244</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-12" class="radio"><label for="radio-air-12"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>237</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-13" class="radio"><label for="radio-air-13"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>247</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-14" class="radio"><label for="radio-air-14"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>239</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-15" class="radio"><label for="radio-air-15"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>239</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-16" class="radio"><label for="radio-air-16"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>259</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-17" class="radio"><label for="radio-air-17"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>241</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-18" class="radio"><label for="radio-air-18"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>251</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-19" class="radio"><label for="radio-air-19"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>270</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-20" class="radio"><label for="radio-air-20"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>270</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-21" class="radio"><label for="radio-air-21"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>235</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-22" class="radio"><label for="radio-air-22"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>253</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-23" class="radio"><label for="radio-air-23"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>253</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-24" class="radio"><label for="radio-air-24"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>253</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-25" class="radio"><label for="radio-air-25"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>253</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-26" class="radio"><label for="radio-air-26"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>255</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-27" class="radio"><label for="radio-air-27"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>255</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-28" class="radio"><label for="radio-air-28"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>265</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-29" class="radio"><label for="radio-air-29"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>231</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-30" class="radio"><label for="radio-air-30"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>248</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-31" class="radio"><label for="radio-air-31"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>241</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-32" class="radio"><label for="radio-air-32"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>258</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-33" class="radio"><label for="radio-air-33"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>241</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-34" class="radio"><label for="radio-air-34"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>234</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-35" class="radio"><label for="radio-air-35"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>269</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-36" class="radio"><label for="radio-air-36"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>260</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-37" class="radio"><label for="radio-air-37"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>236</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-38" class="radio"><label for="radio-air-38"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>271</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-39" class="radio"><label for="radio-air-39"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>262</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-40" class="radio"><label for="radio-air-40"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>245</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-41" class="radio"><label for="radio-air-41"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>295</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-42" class="radio"><label for="radio-air-42"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>295</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-43" class="radio"><label for="radio-air-43"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>274</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-44" class="radio"><label for="radio-air-44"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>248</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-45" class="radio"><label for="radio-air-45"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>267</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-46" class="radio"><label for="radio-air-46"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>250</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-47" class="radio"><label for="radio-air-47"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>261</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-48" class="radio"><label for="radio-air-48"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>261</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-49" class="radio"><label for="radio-air-49"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>261</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-50" class="radio"><label for="radio-air-50"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>06:00 <small>AM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>08:15 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>270</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-51" class="radio"><label for="radio-air-51"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>263</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-52" class="radio"><label for="radio-air-52"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>272</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-53" class="radio"><label for="radio-air-53"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>283</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-54" class="radio"><label for="radio-air-54"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>264</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-55" class="radio"><label for="radio-air-55"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>273</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-56" class="radio"><label for="radio-air-56"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>264</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-57" class="radio"><label for="radio-air-57"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>284</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-58" class="radio"><label for="radio-air-58"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>274</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-59" class="radio"><label for="radio-air-59"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>285</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-60" class="radio"><label for="radio-air-60"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>266</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-61" class="radio"><label for="radio-air-61"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>249</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-62" class="radio"><label for="radio-air-62"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>250</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-63" class="radio"><label for="radio-air-63"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>287</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-64" class="radio"><label for="radio-air-64"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>267</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-65" class="radio"><label for="radio-air-65"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>287</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-66" class="radio"><label for="radio-air-66"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>287</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-67" class="radio"><label for="radio-air-67"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>277</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-68" class="radio"><label for="radio-air-68"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>268</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-69" class="radio"><label for="radio-air-69"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>245</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-70" class="radio"><label for="radio-air-70"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>261</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-71" class="radio"><label for="radio-air-71"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>271</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-72" class="radio"><label for="radio-air-72"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>293</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-73" class="radio"><label for="radio-air-73"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>265</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-74" class="radio"><label for="radio-air-74"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>257</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-75" class="radio"><label for="radio-air-75"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>275</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-76" class="radio"><label for="radio-air-76"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>285</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-77" class="radio"><label for="radio-air-77"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>285</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-78" class="radio"><label for="radio-air-78"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>275</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-79" class="radio"><label for="radio-air-79"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>276</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-80" class="radio"><label for="radio-air-80"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>276</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-81" class="radio"><label for="radio-air-81"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>287</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-82" class="radio"><label for="radio-air-82"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>260</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-83" class="radio"><label for="radio-air-83"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>310</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-84" class="radio"><label for="radio-air-84"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>299</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-85" class="radio"><label for="radio-air-85"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>269</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-86" class="radio"><label for="radio-air-86"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>269</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-87" class="radio"><label for="radio-air-87"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>261</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-88" class="radio"><label for="radio-air-88"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>07:45 <small>AM</small> <span>SEN</span></p>
+   </td>
+   <td class="td-time">
+      <p>10:00 <small>AM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>279</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-89" class="radio"><label for="radio-air-89"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>271</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-90" class="radio"><label for="radio-air-90"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>271</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-91" class="radio"><label for="radio-air-91"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>15:05 <small>PM</small> <span>STN</span></p>
+   </td>
+   <td class="td-time">
+      <p>17:10 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 05</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>291</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-92" class="radio"><label for="radio-air-92"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:45 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:00 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>281</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-93" class="radio"><label for="radio-air-93"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>11:45 <small>AM</small> <span>LCY</span></p>
+   </td>
+   <td class="td-time">
+      <p>13:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>302</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-94" class="radio"><label for="radio-air-94"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>272</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-95" class="radio"><label for="radio-air-95"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>18:30 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>20:50 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 20</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>282</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-96" class="radio"><label for="radio-air-96"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>16:15 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>18:25 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>303</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-97" class="radio"><label for="radio-air-97"></label></div>
+      <img src="boardingpass.png" alt=""> Euro Travel
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>273</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-98" class="radio"><label for="radio-air-98"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>19:40 <small>PM</small> <span>LGW</span></p>
+   </td>
+   <td class="td-time">
+      <p>21:55 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 15</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>282</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-99" class="radio"><label for="radio-air-99"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>274</ins> GBP</span></td>
+</tr>
+
+<tr class="">
+   <td class="td-airline">
+      <div class="radio-checkbox"><input type="radio" name="airline" id="radio-air-100" class="radio"><label for="radio-air-100"></label></div>
+      <img src="boardingpass.png" alt=""> Ui Agency
+   </td>
+   <td class="td-time">
+      <p>20:10 <small>PM</small> <span>LTN</span></p>
+   </td>
+   <td class="td-time">
+      <p>22:20 <small>PM</small> <span>AMS</span></p>
+ </td>
+   <td class="td-stop text-center">
+      <div class="stop-cn"><label>1h 10</label><span class="stops"></span><label>1 Stop</label></div>
+   </td>
+   <td class="td-price text-center"><span><ins>294</ins> GBP</span></td>
+</tr>
+
+
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="js\jquery-1.11.0.min.js"></script>
+
+      <script type="text/javascript" src="js\bootstrap.min.js"></script>
+      <script type="text/javascript" src="js\jquery.nicescroll.js"></script>
+      <script type="text/javascript" src="js\script.js"></script>
+      <script>
+      function sortTable(column) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+          //start by saying: no switching is done:
+          switching = false;
+          rows = table.getElementsByTagName("TR");
+          /*Loop through all table rows (except the
+          first, which contains table headers):*/
+          for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("TD")[column];
+            y = rows[i + 1].getElementsByTagName("TD")[column];
+            //check if the two rows should switch place:
+            if (x.innerHTML.toLowerCase().trim() > y.innerHTML.toLowerCase().trim()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+
+
+      function submit(){
+
+          $('<div class="alert btnia alert-success"><strong>Success!</strong>' + agency + ' will get back to you with the tickets.</div>').insertAfter("#btnID");
+          $("#btnID").prop('disabled', true);
+          setTimeout(function () { window.external.Submit(agency.trim() + " will get back to you with the tickets.");}, 3000);
+
+      }
+
+var count = 0;
+var agency = "";
+      $(function() { // <== Doc ready
+
+        $('tr').click(function (event) {
+
+                if (!$('input[type=radio]', this).prop('checked'))
+                {
+                    $('input[type=radio]', this).prop('checked', true);
+                    var a = $(this).children('td').map(function (index, val) {
+                        return $(this).text();
+                    }).toArray();
+                    if(!(typeof a[4] === "undefined"))
+                    {
+                      document.getElementById('priceSel').innerHTML=a[4];
+                      document.getElementById('agencySel').innerHTML=" / "+a[0];
+                      agency = a[0];
+                      if(count<1)
+                      {
+                        $('<div><button onclick="submit()" id="btnID" class="btn btnia btn-transparent" onclick="">Book ticket</button></div>').insertAfter("#agencySel");
+                      }
+
+                      count=count+1;
+
+                    }
+
+                  }
+            });
+      });
+      </script>
+   </body>
+</html>

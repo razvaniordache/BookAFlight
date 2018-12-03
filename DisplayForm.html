@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <title>UiPath</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body style="">
+      <div id="wrap">
+         <header id="header" class="header header-stick" style="background-color: rgb(255, 255, 255);">
+            <div class="container">
+               <div class="logo float-left" style="opacity: 1; visibility: visible;"><a href="DisplayForm.html" title=""><img src="logo.svg" alt=""></a></div>
+               <div class="bars" id="bars" style="display: none;"></div>
+               <nav class="nav-c nav-i" id="navigation" data-menu-type="1200">
+                  <div class="nav-inner">
+                     <div class="tb">
+                        <div class="tb-cell">
+                           <ul class="menu-list text-uppercase">
+                              <li class="current-menu-parent">
+                                 <a href="DisplayForm.html" title="">BOOK</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </header>
+         <div class="main">
+            <div class="container">
+               <div class="main-cn bg-white clearfix">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <section class="list-f">
+                           <div class="f-statistics">
+                              <div class="row">
+                                 <div class="col-sm-12 text-center f-statistics-item">
+                                    <h5></h5>
+                                 </div>
+                              </div>
+                           </div>
+                           <div id="FormDivClass" class="list-f-cn">
+
+                                 <div class="form-group">
+                                    <label for="departurecity">Departure City</label>
+                                    <div class="row">
+                                       <div class="col-md-12"><input id ="departurecity" class="form-control" type="text" placeholder ="Type in departure city"></div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="destinationcity">Destination City</label>
+                                    <div class="row">
+                                       <div class="col-md-12"><input id ="destinationcity" class="form-control" type="text" placeholder ="Type in destination city"></div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="departuredate">Departure Date</label>
+                                    <div class="row">
+                                       <div class="col-md-12"><input id ="departuredate" class="form-control" type="text" placeholder ="Type in departure date"></div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="radio-air-1">Return Flight</label>
+                                    <div class="row">
+                                       <div class="col-md-12">
+                                         <div class="td-airline">
+                                            <div class="radio-checkbox" ><input onclick="ReturnDate(1)" type="radio" name="airline" id="radio-air-1" class="radio" checked><label for="radio-air-1">Yes</label></div>
+                                            <div class="radio-checkbox" ><input onclick="ReturnDate(2)" type="radio" name="airline" id="radio-air-2" class="radio"><label for="radio-air-2">No</label></div>
+                                         </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="returndate">Return Date</label>
+                                    <div class="row">
+                                       <div class="col-md-12"><input id ="returndate" class="form-control" type="text" placeholder ="Type in return date"></div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <div class="row" id="editExcelAllRow">
+                                       <div class="col-md-12"><button onclick="Submit();" type="button" id="SubmitForm" class="btn btn-primary form-control">Submit</button></div>
+                                    </div>
+                                 </div>
+
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript">
+         var divNode = document.getElementById("FormDivClass");
+         var inputNodes = divNode.getElementsByTagName('INPUT');
+         var InputString = "";
+
+         function ReturnDate(x)
+         {
+           if(x==2)
+           {
+               $("#returndate").prop('disabled', true);
+           }
+           if(x==1)
+           {
+               $("#returndate").prop('disabled', false);
+           }
+         }
+
+          function Submit(){
+
+                      $('<div class="alert btnia alert-success"><strong>Success!</strong> Starting searching on the specified dates.</div>').insertAfter("#FormDivClass");
+                      $("#SubmitForm").prop('disabled', true);
+                      setTimeout(function () { window.external.Submit("Starting search on the specified dates.");}, 3000);
+          }
+
+      </script>
+   </body>
+</html>

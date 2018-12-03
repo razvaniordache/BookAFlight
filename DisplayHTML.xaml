@@ -1,0 +1,308 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="DisplayHTML" this:DisplayHTML.citySource="Bucharest" this:DisplayHTML.cityDestination="London" this:DisplayHTML.DateReturn="[DateTime.Now]"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:uh="clr-namespace:UiPath.HTMLDisplayActivity;assembly=HTMLDisplayActivity"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="JsonString" Type="InArgument(x:String)" />
+    <x:Property Name="citySource" Type="InArgument(x:String)" />
+    <x:Property Name="cityDestination" Type="InArgument(x:String)" />
+    <x:Property Name="DateReturn" Type="InArgument(s:DateTime)" />
+    <x:Property Name="DateDeparture" Type="InArgument(s:DateTime)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>DisplayHTML_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Exceptionless.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Core.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>Exceptionless</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DisplayHTML" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="njl:JArray" Name="JsonArr" />
+      <Variable x:TypeArguments="x:String" Name="indexTemplate" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;Euro Travel&quot;, &quot;Ui Agency&quot;, &quot;Travel Agency Co.&quot;}]" Name="Agency" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="count" />
+      <Variable x:TypeArguments="x:String" Name="ToReplace">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="out" />
+    </Sequence.Variables>
+    <ui:DeserializeJsonArray DisplayName="Deserialize json array" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_2" JsonArray="[JsonArr]" JsonString="[JsonString]" />
+    <ui:ReadTextFile Content="[indexTemplate]" DisplayName="Read text file" FileName="[Directory.GetCurrentDirectory + &quot;/HTML/indexTemplate.html&quot;]" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+    <ui:ForEach x:TypeArguments="njl:JObject" DisplayName="For each" Values="[JsonArr]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="njl:JObject">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="njl:JObject" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="trTemplate" />
+            </Sequence.Variables>
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[count+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ReadTextFile Content="[trTemplate]" DisplayName="Read text file" FileName="[Directory.GetCurrentDirectory + &quot;/HTML/trTemplate.html&quot;]" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+            <Assign DisplayName="replaceCount" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#count#",count.ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="departuretime" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#departuretime#",item("DepartureTime").ToString).Replace("#DepartureAirport#",item("DepartureAirport").ToString).Replace("#destinationtime#",item("ArrivalTime").ToString).Replace("#DestinationAirport#",item("DestinationAirport").ToString).Replace("#flightduration#",item("FlightDuration").ToString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Get AM/PM Departure Time" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#departureprefix#",DateTime.ParseExact(item("DepartureTime").ToString, "H:mm", new System.Globalization.CultureInfo("en-US"), System.Globalization.DateTimeStyles.None).ToString("tt", System.Globalization.CultureInfo.InvariantCulture))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Get AM/PM Arrival Time" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#destinationprefix#",DateTime.ParseExact(item("ArrivalTime").ToString, "H:mm", new System.Globalization.CultureInfo("en-US"), System.Globalization.DateTimeStyles.None).ToString("tt", System.Globalization.CultureInfo.InvariantCulture))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Random Agency Name" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#agency#",Agency(new Random().Next(0,2)))]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[item(&quot;Price&quot;).ToString.Contains(&quot;£&quot;)]" DisplayName="Currency Checker" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="price" />
+                  </Sequence.Variables>
+                  <Assign DisplayName="Get Price from Json" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[price]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[item("Price").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Remove Pound Sign" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[price]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[price.Replace("£","")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Price with Pound" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#price#",price).Replace("#currency#","GBP")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Assign DisplayName="Price w/o Pound (remove currency)" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[trTemplate]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[trTemplate.Replace("#currency#","")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
+            <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[ToReplace]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[ToReplace + trTemplate + Environment.NewLine]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap2010:WorkflowViewState.IdRef>ForEach`1_8</sap2010:WorkflowViewState.IdRef>
+    </ui:ForEach>
+    <Assign DisplayName="Replace CityDeparture / CityDestination" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[indexTemplate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[indexTemplate.Replace("#departure#",citySource.Trim).Replace("#destination#",cityDestination.Trim)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Add table rows" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[indexTemplate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[indexTemplate.Replace("#tableContents#",ToReplace)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Replace Dates" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[indexTemplate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[indexTemplate.Replace("#fullRetDate#",DateReturn.ToString("MMMM dd,yyyy")).Replace("#fullDepDate#",DateDeparture.ToString("MMMM dd,yyyy"))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Replace Count" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[indexTemplate]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[indexTemplate.Replace("#count#",Count.ToString)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteTextFile DisplayName="Write text file" FileName="[Directory.GetCurrentDirectory + &quot;\HTML\index.html&quot;]" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[indexTemplate]" />
+    <uh:HTMLInputActivity Caption="Input" DisplayName="HTML input activity" DisplayOutputURL="[Directory.GetCurrentDirectory + &quot;\HTML\index.html&quot;]" DisplayOutputWindowState="2" sap2010:WorkflowViewState.IdRef="HTMLInputActivity_1" Output="[out]" />
+    <If Condition="[NOT String.IsNullOrEmpty(out)]" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[out]" />
+      </If.Then>
+    </If>
+    <sads:DebugSymbol.Symbol>d4QBQzpcVXNlcnNcbWloYWkuZG9nYXJ1XERvY3VtZW50c1wxLiBXb3JrXDAzLiBJbnRlcm5hbCBQcm9qZWN0c1xGbGlnaHRCb29raW5nX25ldyAoMilcRmxpZ2h0Qm9va2luZ19uZXdcRmxpZ2h0Qm9va2luZ1xEaXNwbGF5SFRNTC54YW1sTwGKAQGRAQEEAV0BZwEDAa8BAb4BAQJQA/oBDgIBAVQ2VIkBAgEEVTNVNgIBA1gLWDoCAQJdBV2uAQIBcF4FXtIBAgFsXwXRARICAS/SAQXZAQ4CASjaAQXhAQ4CASLiAQXpAQ4CARvqAQXxAQ4CARXyAQXyAcoBAgER8wEF8wGDAgIBC/QBBfgBCgIBBV2GAV2RAQIBc12dAV2rAQIBcV5WXp4BAgFvXh5eLwIBbV9NX1gCAWtlC80BFgIBMNcBMNcBlAECASvUATHUAUACASnfATDfAWQCASXcATHcAUACASPnATDnAbwBAgEe5AEx5AFAAgEc7wEw7wFhAgEY7AEx7AFAAgEW8gG2AfIBxwECARPyAT7yAX4CARLzAfkB8wGAAgIBD/MBXvMBngECAQ7zAbgB8wG7AQIBDfMBI/MBKgIBDPQBE/QBNAIBBvYBCfYBgAECAQhpDXAWAgFmcQ1x1AECAWJyDXkWAgFceg2BARYCAViCAQ2JARYCAVSKAQ2RARYCAVCSAQ2ZARYCAUyaAQ3EARICATXFAQ3MARYCATH2AXb2AX0CAQluN25AAgFpazhrPwIBZ3FbcaABAgFlcSZxNAIBY3c4d2YCAV90OXRFAgFdfzh/+AICAVt8OXxFAgFZhwE4hwG4AgIBV4QBOYQBRQIBVY8BOI8BuAICAVOMATmMAUUCAVGXATiXAXcCAU+UATmUAUUCAU2aARuaAVcCATacARG4ARwCATy7ARHCARoCATfKATjKAWYCATTHATnHAUQCATKgAROnARwCAUioAROvARwCAUOwARO3ARwCAT3AATzAAWECATq9AT29AUkCATilAT6lAVYCAUuiAT+iAUYCAUmtAT6tAVUCAUaqAT+qAUYCAUS1AT61AX8CAUCyAT+yAUsCAT4=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="DeserializeJsonArray_2" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="ReadTextFile_2" sap:VirtualizedContainerService.HintSize="464,59" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="ReadTextFile_3" sap:VirtualizedContainerService.HintSize="360,59" />
+      <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="264,384">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="360,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_12" sap:VirtualizedContainerService.HintSize="360,60" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="382,974">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_8" sap:VirtualizedContainerService.HintSize="464,1108" />
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="Assign_15" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="WriteTextFile_1" sap:VirtualizedContainerService.HintSize="464,87" />
+      <sap2010:ViewStateData Id="HTMLInputActivity_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="LogMessage_1" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,239" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="486,2299">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="DisplayHTML_1" sap:VirtualizedContainerService.HintSize="526,2379" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
